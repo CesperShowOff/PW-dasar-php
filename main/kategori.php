@@ -2,7 +2,10 @@
 
 include '../connect/koneksi.php';
 
+//untuk query menyesuaikan entah mau memasukan atau update , atau sekedar melihat atau bahkan edit
 $query = "SELECT * FROM categories ORDER BY CategoryID ASC";
+
+//untuk connect disini harus urut mulai dari $koneksi setelah itu query
 $result = mysqli_query($koneksi,$query);
 ?>
 
