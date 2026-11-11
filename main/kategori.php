@@ -24,14 +24,14 @@ $result = mysqli_query($koneksi,$query);
             <tr> 
                 <th>ID</th> 
                 <th>Nama Kategori</th>
-                 <th>Deskripsi</th> 
+                <th>Deskripsi</th> 
             </tr> 
         </thead>
         <tbody>
             <?php while ($row = mysqli_fetch_assoc($result)): ?> 
                 <tr> 
                     <td><?= $row['CategoryID'] ?></td> 
-                    <td><a href="produk.php?CategoryID=<?= $row['CategoryID'] ?>"><?= $row['CategoryName'] ?></a></td> 
+                    <td><a href="product.php?CategoryID=<?= $row['CategoryID'] ?>"><?= $row['CategoryName'] ?></a></td> 
                     <td><?= $row['Description'] ?></td> 
                 </tr> 
             <?php endwhile; ?>
