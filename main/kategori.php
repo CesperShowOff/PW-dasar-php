@@ -5,7 +5,7 @@ include '../connect/koneksi.php';
 //untuk query menyesuaikan entah mau memasukan atau update , atau sekedar melihat atau bahkan edit
 $query = "SELECT * FROM categories ORDER BY CategoryID ASC";
 
-//untuk connect disini harus urut mulai dari $koneksi setelah itu query
+//untuk connect disini harus urut mulai dari $koneksi setelah itu $query
 $result = mysqli_query($koneksi,$query);
 ?>
 
@@ -28,6 +28,7 @@ $result = mysqli_query($koneksi,$query);
             </tr> 
         </thead>
         <tbody>
+            <!-- while menyesuaikan row yg ada di db dengan mysqli_fetch_assoc(variable untuk output) -->
             <?php while ($row = mysqli_fetch_assoc($result)): ?> 
                 <tr> 
                     <td><?= $row['CategoryID'] ?></td> 

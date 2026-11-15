@@ -29,7 +29,7 @@ $result = mysqli_query($koneksi, $query);
         <tbody>
             <?php while($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
-                    <td><?= $row['ProductID'] ?></td>
+                    <td><a href="detailProduk.php?ProductID=<?=$row['ProductID']?>"><?=$row['ProductID']?></a></td>
                     <td><?= $row['ProductName'] ?></td>
                     <td><?= $row['QuantityPerUnit']?></td>
                     <td><?= $row['UnitPrice']?></td>
