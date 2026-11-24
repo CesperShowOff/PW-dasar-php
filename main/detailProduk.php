@@ -1,8 +1,12 @@
 <?php
 include "../connect/koneksi.php";
+//ambil id product
 $produk_id = $_GET['ProductID'];
+//query untuk ambils seluruh data dalam product lewat id product
 $query = "SELECT * FROM products where ProductID = '$produk_id'";
+//proses ambil
 $result = mysqli_query($koneksi,$query);
+//proses tampil
 $row = mysqli_fetch_assoc($result);
 ?>
 

@@ -2,6 +2,7 @@
 session_start();
 include "../connect/koneksi.php";
 
+//cek apakah keranjang kosong atau gk
 if(empty($_SESSION['cart'])){
     header("location:kategori.php");
     exit;

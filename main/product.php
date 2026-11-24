@@ -1,8 +1,11 @@
 <?php
 include '../connect/koneksi.php';
 
+//simpan id catergoy ke sebuah variable
 $category_id = $_GET['CategoryID'];
+//query untuk ambil part dari table category lewat id
 $query = "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice, UnitsInStock from products WHERE CategoryID = '$category_id' order by ProductID ASC";
+//proses ambil
 $result = mysqli_query($koneksi, $query);
 ?>
 
@@ -27,7 +30,7 @@ $result = mysqli_query($koneksi, $query);
             </tr>
         </thead>
         <tbody>
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
+            <?php while($row = mysqli_fetch_assoc($result)): //proses tampil data yg di ambil?>
                 <tr>
                     <td><a href="detailProduk.php?ProductID=<?=$row['ProductID']?>"><?=$row['ProductID']?></a></td>
                     <td><?= $row['ProductName'] ?></td>
